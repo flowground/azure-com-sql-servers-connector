@@ -1,0 +1,71 @@
+{
+    "type": "object",
+    "properties": {
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "serverName": {
+            "required": true,
+            "type": "string"
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "An update request for an Azure SQL Database server.",
+            "properties": {
+                "properties": {
+                    "description": "Resource properties.",
+                    "x-ms-client-flatten": true,
+                    "properties": {
+                        "administratorLogin": {
+                            "description": "Administrator username for the server. Once created it cannot be changed.",
+                            "type": "string",
+                            "x-ms-mutability": [
+                                "read",
+                                "create"
+                            ]
+                        },
+                        "administratorLoginPassword": {
+                            "description": "The administrator login password (required for server creation).",
+                            "type": "string",
+                            "x-ms-mutability": [
+                                "create",
+                                "update"
+                            ]
+                        },
+                        "fullyQualifiedDomainName": {
+                            "description": "The fully qualified domain name of the server.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "state": {
+                            "description": "The state of the server.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "version": {
+                            "description": "The version of the server.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Resource tags.",
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
